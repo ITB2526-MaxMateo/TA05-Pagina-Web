@@ -1,0 +1,113 @@
+/* 1. COLORS I BASES */
+:root {
+    --fons: #EDEBD7;
+    --gold: #E3B23C;
+    --fosc: #423E37;
+    --blanc: #ffffff;
+    --gris: #6E675F;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: sans-serif; 
+    background: var(--fons); 
+    color: var(--fosc); 
+    line-height: 1.5; 
+}
+
+/* 2. CAPÇALERA (Estàtica) */
+header {
+    background: var(--fosc);
+    color: var(--gold);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--gold);
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+nav a:hover { color: var(--gold); }
+
+/* 3. ANIMACIÓ FADE-IN */
+@keyframes aparèixer {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animar-entrada { animation: aparèixer 0.7s ease-out forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* 4. ESTRUCTURA PRINCIPAL I TARGETES */
+main { max-width: 1000px; margin: 30px auto; padding: 20px; }
+
+#presentacio, .targeta-projecte, .contingut-detall, .contenidor-formulari { 
+    background: var(--blanc); 
+    padding: 30px; 
+    border-radius: 12px; 
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* 5. FOTO PERFIL */
+.foto-perfil {
+    width: 140px; height: 140px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 5px solid var(--gold);
+    overflow: hidden;
+}
+.foto-perfil img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 6. ESTATS (REQUADRES CENTRATS) */
+.bloc-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.caixa-info {
+    background: var(--fosc);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 180px;
+    border-bottom: 3px solid var(--gold);
+}
+
+.caixa-info span { color: var(--gold); font-size: 0.7rem; font-weight: bold; display: block; }
+.caixa-info p { font-weight: bold; margin-top: 5px; }
+
+/* 7. PROJECTES (GRID) */
+.contenidor-projectes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* 8. BOTONS */
+.boto-principal, .boto-secundari {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--fosc);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: none;
+    transition: 0.3s;
+}
+.boto-principal:hover { background: var(--fosc); color: var(--gold); }
+.boto-secundari { background: #ccc; margin-bottom: 15px; }
+
+/* 9. FORMULARI I ALTRES */
+.camp { margin-bottom: 15px; text-align: left; }
+input, textarea, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+.imatge-gran img, .imatge-projecte img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+footer { text-align: center; padding: 30px; color: var(--gris); font-size: 0.8rem; }
